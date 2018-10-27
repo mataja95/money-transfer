@@ -7,20 +7,20 @@ import javax.persistence.Id;
 public class BankAccount {
 
     @Id
-    private int number;
+    private int id;
     private float money;
 
-    public BankAccount(int number, float money) {
-        this.number = number;
+    protected BankAccount(int id, float money) {
+        this.id = id;
         this.money = money;
     }
 
-    public int getNumber() {
-        return number;
+    protected int getId() {
+        return id;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public float getMoney() {
@@ -34,7 +34,7 @@ public class BankAccount {
     @Override
     public String toString() {
         return "main.java.transfer.BankAccount{" +
-                "number=" + number +
+                "id=" + id +
                 ", money=" + money +
                 '}';
     }

@@ -27,8 +27,8 @@ public class BankAccountController {
     }
 
     @RequestMapping("/bank-accounts/{number}")
-    public BankAccount getBankAccount(@PathVariable int number) {
-        return bankAccountService.getBankAccount(number);
+    public BankAccount getBankAccount(@PathVariable int id) {
+        return bankAccountService.getBankAccount(id);
     }
 }
 
