@@ -14,33 +14,49 @@ class BankAccountService {
         return bankAccountRepository.findAll();
     }
 
-    public void createBankAccount(int id,
-                                  int amount) {
+    public void createBankAccount(int id, int amount) {
         BankAccount bankAccount = new BankAccount(id, amount);
         bankAccountRepository.save(bankAccount);
     }
 
-    public void transferFunds(int fromId,
-                              int toId,
-                              float amount) {
+    public void createBankAccount(int id) {
+        BankAccount bankAccount = new BankAccount(id);
+        bankAccountRepository.save(bankAccount);
+    }
 
+    public void existsBankAccount(int id) {
+        if (bankAccountRepository.findById(id).isPresent()) {
+            throw new BankAccountAlreadyExistsException();
+        }
+    }
+
+    public void transferFunds(int fromId, int toId, float amount) {
         BankAccount fromAccount = this.getBankAccount(fromId);
         BankAccount toAccount = this.getBankAccount(toId);
 
-        this.deductFundsFromAccount(fromAccount, amount);
-        this.addFundsToAccount(toAccount, amount);
+        if (amount > 0 && fundsAvailable(fromAccount, amount)) {
+            this.withdrawFromAccount(fromAccount, amount);
+            this.depositToAccount(toAccount, amount);
+        } else {
+            throw new TransactionException();
+        }
+    }
+
+    public boolean fundsAvailable(BankAccount bankAccount, float amount) {
+        return bankAccount.getAmount() >= amount;
     }
 
     public BankAccount getBankAccount(@PathVariable int id) {
-        return bankAccountRepository.findById(id).isPresent() ? bankAccountRepository.findById(id).get() : null;
+
+        return bankAccountRepository.findById(id).orElseThrow(() -> new AccountNotFoundException(id));
     }
 
-    private void deductFundsFromAccount(BankAccount bankAccount, float amount) {
+    private void withdrawFromAccount(BankAccount bankAccount, float amount) {
         bankAccount.setAmount(bankAccount.getAmount() - amount);
         bankAccountRepository.save(bankAccount);
     }
 
-    private void addFundsToAccount(BankAccount bankAccount, float amount) {
+    private void depositToAccount(BankAccount bankAccount, float amount) {
         bankAccount.setAmount(bankAccount.getAmount() + amount);
         bankAccountRepository.save(bankAccount);
     }

@@ -2,6 +2,8 @@ package transfer;
 
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class BankAccountController {
 
@@ -19,10 +21,17 @@ public class BankAccountController {
 
     @GetMapping(path = "/bank-accounts/add")
     public @ResponseBody
-    String addBankAccount(@RequestParam int id,
-                          @RequestParam int amount) {
-        bankAccountService.createBankAccount(id, amount);
-        return "Saved";
+    String addBankAccount(@Valid @RequestParam int id,
+                          @RequestParam(required = false) Integer amount) {
+        bankAccountService.existsBankAccount(id);
+
+        if (amount != null) {
+            bankAccountService.createBankAccount(id, amount);
+        } else {
+            bankAccountService.createBankAccount(id);
+        }
+
+        return "Bank account added.";
     }
 
     @RequestMapping("/bank-accounts/{id}")
@@ -36,7 +45,7 @@ public class BankAccountController {
                            @RequestParam("amount") float amount) {
 
         bankAccountService.transferFunds(fromId, toId, amount);
-        return "Transfer completed";
+        return "Transfer completed.";
     }
 }
 

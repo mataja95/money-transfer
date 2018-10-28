@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Account")
@@ -13,10 +14,16 @@ import javax.persistence.Table;
 public class BankAccount {
 
     @Id
+    @NotNull(message = "Please provide Account number.")
     private int id;
     private float amount;
 
     protected BankAccount() {
+    }
+
+    protected BankAccount(int id) {
+        this.id = id;
+        this.amount = 0;
     }
 
     protected BankAccount(int id, float amount) {
