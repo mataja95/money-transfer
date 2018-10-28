@@ -48,7 +48,7 @@ class BankAccountService {
 
     public BankAccount getBankAccount(@PathVariable int id) {
 
-        return bankAccountRepository.findById(id).orElseThrow(() -> new AccountNotFoundException(id));
+        return bankAccountRepository.findById(id).orElseThrow(() -> new BankAccountNotFoundException(id));
     }
 
     private void withdrawFromAccount(BankAccount bankAccount, float amount) {
