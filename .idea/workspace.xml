@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e85e49b5-2415-4aa5-be53-85ca310bd726" name="Default Changelist" comment="Added MYSQL DB + Spring JPA entities">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_2_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_2_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_22_0_GA.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/money-transfer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/money-transfer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/transfer/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/transfer/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/transfer/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/transfer/BankAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/transfer/BankAccountRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/transfer/BankAccountService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transfer/BankAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transfer/BankAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transfer/BankAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transfer/BankAccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transfer/BankAccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transfer/BankAccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transfer/BankAccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transfer/BankAccountService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transfer/Runner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/money-transfer-rest-service-0.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/money-transfer-rest-service-0.1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/money-transfer-rest-service-0.1.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/money-transfer-rest-service-0.1.0.jar.original" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,7 +52,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="38" />
-          <entry key="java" value="3125" />
+          <entry key="java" value="3131" />
           <entry key="properties" value="45" />
           <entry key="txt" value="71" />
           <entry key="xml" value="209" />
@@ -81,7 +60,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3125" />
+          <entry key="JAVA" value="3131" />
           <entry key="PLAIN_TEXT" value="109" />
           <entry key="Properties" value="45" />
           <entry key="XML" value="209" />
@@ -121,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -145,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccountService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+              <caret line="34" column="102" selection-start-line="34" selection-start-column="102" selection-end-line="34" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#301#302#0" expanded="true" />
@@ -221,6 +200,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -236,8 +216,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/BankAccount.java" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/BankAccountRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/transfer/BankAccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/transfer/BankAccountController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/transfer/BankAccountService.java" />
       </list>
     </option>
   </component>
@@ -345,7 +325,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540722932636" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540723176387" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javassist.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -397,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540639516823</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added MYSQL DB + Spring JPA entities">
+      <created>1540722952823</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540722952823</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -413,7 +400,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19669509" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19669509" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -422,14 +409,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3275488" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23318872" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23318872" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.2537961" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.5661605" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -440,6 +427,32 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -558,28 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccountRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -603,6 +594,28 @@
             <element signature="e#728#729#0" expanded="true" />
             <element signature="e#1115#1116#0" expanded="true" />
             <element signature="e#1172#1173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccountRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/transfer/BankAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="102" selection-start-line="34" selection-start-column="102" selection-end-line="34" selection-end-column="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
