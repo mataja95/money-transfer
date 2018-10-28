@@ -1,34 +1,42 @@
 package transfer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BankAccountController {
 
-    @Autowired
     private BankAccountService bankAccountService;
 
-    @RequestMapping("/transfer")
-    public BankAccount account(@RequestParam(value="from", defaultValue="1234") int fromAccount,
-                               @RequestParam(value="to", defaultValue="4567") int toAccount,
-                               @RequestParam(value="amount", defaultValue="100") float amount) {
-        return new BankAccount(fromAccount, amount);
+    public BankAccountController(BankAccountService bankAccountService) {
+        this.bankAccountService = bankAccountService;
     }
 
-    @RequestMapping("/bank-accounts")
-    public List<BankAccount> getAllBankAccounts() {
-        return bankAccountService.getBankAccounts();
+    @GetMapping(path = "/bank-accounts")
+    public @ResponseBody
+    Iterable<BankAccount> getAllBankAccounts() {
+        return bankAccountService.getAllBankAccounts();
     }
 
-    @RequestMapping("/bank-accounts/{number}")
+    @GetMapping(path = "/bank-accounts/add")
+    public @ResponseBody
+    String addBankAccount(@RequestParam int id,
+                          @RequestParam int amount) {
+        bankAccountService.createBankAccount(id, amount);
+        return "Saved";
+    }
+
+    @RequestMapping("/bank-accounts/{id}")
     public BankAccount getBankAccount(@PathVariable int id) {
         return bankAccountService.getBankAccount(id);
+    }
+
+    @RequestMapping("/bank-accounts/transfer")
+    public String transfer(@RequestParam("from") int fromId,
+                           @RequestParam("to") int toId,
+                           @RequestParam("amount") float amount) {
+
+        bankAccountService.transferFunds(fromId, toId, amount);
+        return "Transfer completed";
     }
 }
 

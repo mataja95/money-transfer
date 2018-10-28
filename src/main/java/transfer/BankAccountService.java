@@ -1,36 +1,47 @@
 package transfer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
-public class BankAccountService {
+class BankAccountService {
 
-    private BankAccountRepository bankAccountRepository;
+    @Autowired
+    public BankAccountRepository bankAccountRepository;
 
-    private List<BankAccount> bankAccounts = Arrays.asList
-            (new BankAccount(1234, 10),
-                    (new BankAccount(4567, 100)),
-                    (new BankAccount(7890, 500)));
-
-    protected List<BankAccount> getBankAccounts(){
-        List<BankAccount> bankAccounts = new ArrayList<>();
-        bankAccountRepository.findAll()
-                .forEach(bankAccounts::add);
-        return bankAccounts;
+    Iterable<BankAccount> getAllBankAccounts() {
+        return bankAccountRepository.findAll();
     }
 
-    protected BankAccount getBankAccount(int id){
-        return bankAccounts.stream().filter(bankAccount -> bankAccount.getId() == id).findFirst().get();
-    }
-    public void addBankAccount(BankAccount bankAccount){
+    public void createBankAccount(int id,
+                                  int amount) {
+        BankAccount bankAccount = new BankAccount(id, amount);
         bankAccountRepository.save(bankAccount);
     }
 
-    public void updateBankAccount(int id, BankAccount bankAccount){
+    public void transferFunds(int fromId,
+                              int toId,
+                              float amount) {
+
+        BankAccount fromAccount = this.getBankAccount(fromId);
+        BankAccount toAccount = this.getBankAccount(toId);
+
+        this.deductFundsFromAccount(fromAccount, amount);
+        this.addFundsToAccount(toAccount, amount);
+    }
+
+    public BankAccount getBankAccount(@PathVariable int id) {
+        return bankAccountRepository.findById(id).isPresent() ? bankAccountRepository.findById(id).get() : null;
+    }
+
+    private void deductFundsFromAccount(BankAccount bankAccount, float amount) {
+        bankAccount.setAmount(bankAccount.getAmount() - amount);
+        bankAccountRepository.save(bankAccount);
+    }
+
+    private void addFundsToAccount(BankAccount bankAccount, float amount) {
+        bankAccount.setAmount(bankAccount.getAmount() + amount);
         bankAccountRepository.save(bankAccount);
     }
 }

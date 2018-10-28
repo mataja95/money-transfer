@@ -1,18 +1,27 @@
 package transfer;
 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Account")
+@EntityListeners(AuditingEntityListener.class)
 public class BankAccount {
 
     @Id
     private int id;
-    private float money;
+    private float amount;
 
-    protected BankAccount(int id, float money) {
+    protected BankAccount() {
+    }
+
+    protected BankAccount(int id, float amount) {
         this.id = id;
-        this.money = money;
+        this.amount = amount;
     }
 
     protected int getId() {
@@ -23,19 +32,19 @@ public class BankAccount {
         this.id = id;
     }
 
-    public float getMoney() {
-        return money;
+    public float getAmount() {
+        return amount;
     }
 
-    public void setMoney(float money) {
-        this.money = money;
+    public void setAmount(float amount) {
+        this.amount = amount;
     }
 
     @Override
     public String toString() {
         return "main.java.transfer.BankAccount{" +
                 "id=" + id +
-                ", money=" + money +
+                ", amount=" + amount +
                 '}';
     }
 }
