@@ -1,24 +1,32 @@
 version: '2'
 
 services:
-  db:
-    container_name: dbContainer
-    image: mysql:5.7
-    volumes:
-    - ./data:/var/lib/mysql
-    ports:
-    - 3306
+  mysql-docker-container:
+    image: mysql:latest
     environment:
-     MYSQL_ROOT_PASSWORD: "root"
-     MYSQL_USER: "root"
-     MYSQL_PASSWORD: "root"
-     MYSQL_DATABASE: "test"
-  java:
-    container_name: javaApplication
-    image: openjdk:8
-    depends_on:
-    - db
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bank
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3306:3306
     volumes:
-    - ./example.java.helloworld/:/usr/src/myapp 
-    working_dir: /usr/src/myapp
-    command: bash -c "java -jar Main.jar"
+      - /data/mysql
+  money-transfer-app:
+    image: money-transfer-image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-docker-container
+    ports:
+      - 8080:8080
+    volumes:
+      - /data/money-transfer-app
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_NAME=bank
+      - DATABASE_PORT=3306
+      
+      
