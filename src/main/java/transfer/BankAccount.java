@@ -15,23 +15,23 @@ public class BankAccount {
 
     @Id
     @NotNull(message = "Please provide Account number.")
-    private int id;
-    private float amount;
+    private Integer id;
+    private Float amount;
 
     protected BankAccount() {
     }
 
-    protected BankAccount(int id) {
+    protected BankAccount(Integer id) {
         this.id = id;
-        this.amount = 0;
+        this.amount = 0F;
     }
 
-    protected BankAccount(int id, float amount) {
+    protected BankAccount(Integer id, Float amount) {
         this.id = id;
         this.amount = amount;
     }
 
-    protected int getId() {
+    protected Integer getId() {
         return id;
     }
 
@@ -39,7 +39,7 @@ public class BankAccount {
         this.id = id;
     }
 
-    public float getAmount() {
+    public Float getAmount() {
         return amount;
     }
 

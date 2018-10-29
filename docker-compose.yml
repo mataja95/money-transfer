@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   mysql-docker-container:
@@ -8,10 +8,11 @@ services:
       - MYSQL_DATABASE=bank
       - MYSQL_PASSWORD=root
     ports:
-      - 3306:3306
+      - 3336:3306
     volumes:
       - /data/mysql
   money-transfer-app:
+    restart: on-failure
     image: money-transfer-image
     build:
       context: ./
@@ -27,6 +28,4 @@ services:
       - DATABASE_USER=root
       - DATABASE_PASSWORD=root
       - DATABASE_NAME=bank
-      - DATABASE_PORT=3306
-      
-      
+      - DATABASE_PORT=3336

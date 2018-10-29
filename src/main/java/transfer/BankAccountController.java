@@ -13,16 +13,16 @@ public class BankAccountController {
         this.bankAccountService = bankAccountService;
     }
 
-    @GetMapping(path = "/bank-accounts")
+    @GetMapping(path = "/")
     public @ResponseBody
     Iterable<BankAccount> getAllBankAccounts() {
         return bankAccountService.getAllBankAccounts();
     }
 
-    @GetMapping(path = "/bank-accounts/add")
+    @GetMapping(path = "/add")
     public @ResponseBody
-    String addBankAccount(@Valid @RequestParam int id,
-                          @RequestParam(required = false) Integer amount) {
+    String addBankAccount(@Valid @RequestParam Integer id,
+                          @RequestParam(required = false) Float amount) {
         bankAccountService.existsBankAccount(id);
 
         if (amount != null) {
@@ -34,15 +34,15 @@ public class BankAccountController {
         return "Bank account added.";
     }
 
-    @RequestMapping("/bank-accounts/{id}")
-    public BankAccount getBankAccount(@PathVariable int id) {
+    @RequestMapping("/{id}")
+    public BankAccount getBankAccount(@PathVariable Integer id) {
         return bankAccountService.getBankAccount(id);
     }
 
-    @RequestMapping("/bank-accounts/transfer")
-    public String transfer(@RequestParam("from") int fromId,
-                           @RequestParam("to") int toId,
-                           @RequestParam("amount") float amount) {
+    @RequestMapping("/transfer")
+    public String transfer(@RequestParam("from") Integer fromId,
+                           @RequestParam("to") Integer toId,
+                           @RequestParam("amount") Float amount) {
 
         bankAccountService.transferFunds(fromId, toId, amount);
         return "Transfer completed.";
