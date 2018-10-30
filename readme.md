@@ -41,6 +41,8 @@ In the controller class, I opted to add "/account" in localhost:8080/account/{id
 
 I opted to structure the package in terms of layer as this is a small application. However, if the application is to be scaled, it would be better to structure the project by feature https://dzone.com/articles/project-package-organization.
 
+It is important to use the Classes rather than the primitive types (for example Integer instead of int). Integer can be treated like any other object - int cannot be null, but 0. Using int instead of Integer is not recommended when using @RequestMapping as this will pose errors if the number is not supplied by the user (i.e. exception handling). 
+
 Regarding HTTP requests I used a GET request to get all / one bank account, POST request to create a new bank account and PUT to update (transfer) bank accounts. I did not do any deletions, to keep with the scope of the application but this can easily be added. 
 
 I chose to opt for MYSQL database using XAMPP and phpmyadmin interface. I did not use any security as to keep things simple. The database is not created manually, but using application.properties spring.jpa.hibernate.ddl-auto=create property to automatically create the tables in the database according to the entities in the java application. To load them in data-memory storage I opted for Spring entities as explained above. 
@@ -50,4 +52,5 @@ For Docker, first I manually created a MYSQL container, then a java container, a
 # Tests
 
 Scripts/tests.sh contains bash file with curl commands
+
 Curl tests.docx contains tests that I run with screenshots
