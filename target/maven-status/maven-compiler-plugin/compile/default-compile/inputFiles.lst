@@ -1,8 +1,9 @@
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\TransactionException.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\exceptions\BankAccountNotFoundException.java
 C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\Application.java
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\BankAccountService.java
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\BankAccountRepository.java
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\BankAccountAlreadyExistsException.java
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\BankAccount.java
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\BankAccountController.java
-C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\BankAccountNotFoundException.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\bank\BankAccount.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\bank\BankTransferModel.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\controllers\BankAccountController.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\exceptions\TransactionException.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\exceptions\BankAccountAlreadyExistsException.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\repository\BankAccountRepository.java
+C:\Users\Donna\IdeaProjects\money-transfer\src\main\java\transfer\service\BankAccountService.java

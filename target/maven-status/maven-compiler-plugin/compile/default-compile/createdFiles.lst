@@ -1,8 +1,0 @@
-transfer\TransactionException.class
-transfer\BankAccount.class
-transfer\BankAccountNotFoundException.class
-transfer\BankAccountRepository.class
-transfer\BankAccountController.class
-transfer\BankAccountService.class
-transfer\Application.class
-transfer\BankAccountAlreadyExistsException.class
